@@ -1,7 +1,3 @@
-FROM python:3
-
-ADD mac.py /
-
-RUN pip install pystrich
-
-CMD [ "python", "./mac.py" ]
+FROM tomcat:8
+# Take the war and copy to webapp of tomcat
+COPY target/*.war /usr/local/tomcat/webapps/
